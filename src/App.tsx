@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import Toolbar from "./components/Toolbar";
+import NoteItem from "./components/NoteItem";
+import NoteList from "./components/NoteList";
+import { useState } from "react";
+export type NoteT={
+  description: string,
+  done: boolean,
+  id:number,
+  date:string,
+  deadline: string,
+}
+
+
+let testArray=[{description:"This is the first note and I'm testing the functionality.",done:false,id:1,date:"12345", deadline: "02/12/2025"},{description:"This is the second note and I'm testing the functionality.",done:false,id:2,date:"12345",deadline: "09/10/2025"},{description:"This is the thirs note and I'm testing the functionality.",done:false,id:3,date:"12345",deadline: "15/05/2025"}]
+
 
 function App() {
+const [notes, setNotes]=useState<NoteT[]>(testArray);
+console.log(notes);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app_container">
+      <h1 className="title">sticky wall</h1>
+      <Toolbar/>
+      <NoteList notes={testArray} />
+     
+
+
+      
     </div>
   );
 }
