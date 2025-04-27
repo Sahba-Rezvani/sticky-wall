@@ -21,8 +21,12 @@ button{
   border: none;
   color: #222;
   cursor: pointer;
-
 }
+
+ul{
+  list-style: none;
+}
+/* End of Global Styles */
 
 .title{
   text-transform: uppercase;
@@ -33,14 +37,18 @@ button{
 .header_toolbar{
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 5rem;
 }
 
 .toolbar--left{
   margin-right: auto;
 }
 
-.sticky_wall{}
+.sticky_wall{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 1rem;
+}
 
 .note{
   width: 350px;
@@ -48,25 +56,53 @@ button{
   padding: .75rem;
   border-radius: 1px;
   background-color: #fff9b0;
-
+  font-family: "Caveat", cursive;
 }
 
 .note_header{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.note_remove{}
+.note_remove{
+  font-size: 20px;
+  cursor: pointer;
+}
 .note_complete{}
+
+.note_submit{
+  font-size: 17px;
+  color: darkslategrey;
+  text-align: right;
+}
 .note_context{
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
   height: 220px;
-  font-family: "Caveat", cursive;
   font-size: 23px;
   color: #333;
+  font-family: "Caveat", cursive;
+  padding: 1rem .5rem;
 }
-.note_footer{
 
+
+.deadline--label{
+  font-size: 17px;
 }
-.note_deadline{}
+
+.note_deadline{
+  border: none;
+  background: none;
+  font-size: 17px;
+  outline: none;
+  cursor: pointer;
+  font-family: "Caveat", cursive;
+}
+
+.note_deadline:hover{
+  color: red;
+}
 

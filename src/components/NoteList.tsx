@@ -2,11 +2,13 @@ import NoteItem from "./NoteItem";
 import {NoteT} from "../App"
 
 type NoteListPropsT={
-    notes:NoteT[]
+    notes:NoteT[],
+    onDelete: (id:string)=>void,
+    onToggle: (id:string)=>void
 }
 
-export default function NoteList({notes}:NoteListPropsT){
+export default function NoteList({notes,onDelete,onToggle}:NoteListPropsT){
     return(
-        <ul className="">{notes.map(note=><NoteItem note={note} key={note.id}/>)}</ul>
+        <ul className="sticky_wall">{notes.map(note=><NoteItem note={note} onDelete={onDelete} onToggle={onToggle} key={note.id}/>)}</ul>
     )
 }
